@@ -1,8 +1,8 @@
 public class Conta{
     private double saldo;
-    int agencia;
-    int numero;
-    Cliente titular; //Esse atributo é do tipo Cliente (classe) e faz referência a essa classe Cliente.
+    private int agencia;
+    private int numero;
+    private Cliente titular; //Esse atributo é do tipo Cliente (classe) e faz referência a essa classe Cliente.
 
     public void deposita(double valor) {
         this.saldo += valor;
@@ -29,5 +29,31 @@ public class Conta{
 
     public double getSaldo(){
         return this.saldo;
+    }
+
+    public void setAgencia(int agencia){
+        this.agencia = agencia;
+    }
+
+    public int getAgencia(){
+        return this.agencia;
+    }
+
+    public int getNumero() {
+        return this.numero;
+    }
+
+    public void setNumero(int numero) {
+        //Métodos set tendem a não retornar nada, portanto são void
+        //Dentro de getters e setters podemos fazer verificações.
+        this.numero = numero;
+    }
+
+    public void setTitular(Cliente titular) {
+        this.titular = titular;
+    }
+
+    public Cliente getTitular() {
+        return this.titular;
     }
 }
