@@ -3,6 +3,18 @@ public class Conta{
     private int agencia;
     private int numero;
     private Cliente titular; //Esse atributo é do tipo Cliente (classe) e faz referência a essa classe Cliente.
+    private static int total;
+
+    public Conta(int agencia, int numero) {
+        if(agencia <= 0 || numero <= 0){
+            System.out.println("Número da agência ou conta não podem ser menor ou iguais a zero.");
+            return;
+        }
+        Conta.total++;
+        System.out.println("Total de contas abertas: " + Conta.total);
+        this.agencia = agencia;
+        this.numero = numero;
+    }
 
     public void deposita(double valor) {
         this.saldo += valor;
@@ -55,5 +67,9 @@ public class Conta{
 
     public Cliente getTitular() {
         return this.titular;
+    }
+
+    public static int getTotal() {
+        return Conta.total;
     }
 }

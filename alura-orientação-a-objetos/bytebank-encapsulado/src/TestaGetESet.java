@@ -1,11 +1,8 @@
 public class TestaGetESet {
     public static void main(String[] args) {
         //Criando conta e populando classe
-        Conta conta = new Conta();
-        conta.setNumero(1337);
+        Conta conta = new Conta(1337, 24226);
         System.out.println("Número: " + conta.getNumero());
-
-        conta.setAgencia(1010);
         System.out.println("Agência: " + conta.getAgencia());
 
         //Criando cliente e referenciando cliente a conta
