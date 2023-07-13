@@ -2,9 +2,10 @@ public class Gerente extends Funcionario {
     private int senha;
 
     public boolean autenticacao(int senha) {
-        if(this.senha == senha){
+        if(this.senha == senha) {
             return true;
-        } else {
+        }
+        else {
             return false;
         }
     }
@@ -14,6 +15,7 @@ public class Gerente extends Funcionario {
     }
 
     public double getBonificacao() {
+        System.out.println("Chamando método de bonificação do gerente:");
         return super.getBonificacao() + super.getSalario();
     }
 
