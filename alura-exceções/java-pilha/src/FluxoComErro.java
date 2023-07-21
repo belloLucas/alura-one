@@ -1,4 +1,4 @@
-public class Fluxo {
+public class FluxoComErro {
 
     public static void main(String[] args) {
         System.out.println("Inicio do método main");
@@ -11,15 +11,15 @@ public class Fluxo {
         System.out.println("Fim do método main");
     }
 
-    private static void metodo1() throws MinhaExcecao {
+    private static void metodo1() {
         System.out.println("Início do método1");
         metodo2();
         System.out.println("Fim do método1");
     }
 
-    private static void metodo2() throws MinhaExcecao{
-        System.out.println("Início do método2");
-//        throw new MinhaExcecao("deu ruim amigão");
-//        System.out.println("Fim do método2");
+    private static void metodo2() {
+        System.out.println("Chamando método2");
+        metodo2();
+        System.out.println("Fim do método2");
     }
 }
