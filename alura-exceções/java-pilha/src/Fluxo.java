@@ -4,7 +4,7 @@ public class Fluxo {
         System.out.println("Inicio do método main");
         try {
             metodo1();
-        } catch (ArithmeticException | NullPointerException | MinhaExcecao ex) {
+        } catch (Exception ex) {
             String msg = ex.getMessage();
             System.out.println("Ocorreu um erro: " + msg);
         }
