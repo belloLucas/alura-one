@@ -1,4 +1,4 @@
-import java.sql.SQLOutput;
+package br.com.bytebank.banco.modelo;
 
 public abstract class Conta {
     protected double saldo;
