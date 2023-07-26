@@ -7,9 +7,9 @@ import br.com.bytebank.banco.modelo.ContaPoupanca;
 public class Teste {
 
     public static void main(String[] args) {
-        System.out.println("x");
-        System.out.println(10);
-        System.out.println(false);
+//        System.out.println("x");
+//        System.out.println(10);
+//        System.out.println(false);
 
         ContaCorrente cc = new ContaCorrente(111, 111);
         ContaPoupanca cp = new ContaPoupanca(222, 222);
