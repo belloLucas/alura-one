@@ -10,11 +10,11 @@ public class TesteArrayDeReferencia {
 
         Object[] referencias = new Object[5];
 
-        ContaCorrente cc1 = new ContaCorrente(1234, 4321);
-        referencias[0] = cc1;
+        ContaCorrente cc = new ContaCorrente(1234, 4321);
+        referencias[0] = cc;
 
-        ContaPoupanca cc2 = new ContaPoupanca(1112, 1211);
-        referencias[1] = cc2;
+        ContaPoupanca cp = new ContaPoupanca(1112, 1211);
+        referencias[1] = cp;
 
         Cliente cliente = new Cliente();
         referencias[2] = cliente;
