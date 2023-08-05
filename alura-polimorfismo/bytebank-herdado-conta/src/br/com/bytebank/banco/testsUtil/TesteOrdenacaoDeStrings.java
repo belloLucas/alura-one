@@ -54,8 +54,7 @@ public class TesteOrdenacaoDeStrings {
 
         System.out.println("=-=-=-=-=-=-= Lista após a ordenação =-=-=-=-==-=-=-");
 
-        TitularDaContaComparator comparator = new TitularDaContaComparator();
-        lista.sort(comparator);
+        lista.sort(new TitularDaContaComparator());
 
         for(Conta conta : lista){
             System.out.println(conta + ", " + conta.getTitular().getNome());

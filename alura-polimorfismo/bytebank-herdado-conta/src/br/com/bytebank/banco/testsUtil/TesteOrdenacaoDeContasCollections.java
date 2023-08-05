@@ -5,10 +5,10 @@ import br.com.bytebank.banco.modelo.ContaCorrente;
 import br.com.bytebank.banco.modelo.ContaPoupanca;
 
 import java.util.ArrayList;
-import java.util.Comparator;
+import java.util.Collections;
 import java.util.List;
 
-public class TesteOrdenacaoDeContas {
+public class TesteOrdenacaoDeContasCollections {
     public static void main(String[] args) {
 
         Conta cc1 = new ContaCorrente(22, 33);
@@ -38,18 +38,10 @@ public class TesteOrdenacaoDeContas {
 
         System.out.println("=-=-=-=- Lista após a ordenação =-=-=-=-=");
 
-        lista.sort(new NumeroDaContaComparator());
+        Collections.sort(lista);
 
         for(Object o : lista){
             System.out.println(o);
         }
-    }
-}
-
-class NumeroDaContaComparator implements Comparator<Conta> {
-
-    @Override
-    public int compare(Conta c1, Conta c2) {
-        return Integer.compare(c1.getNumero(), c2.getNumero());
     }
 }
