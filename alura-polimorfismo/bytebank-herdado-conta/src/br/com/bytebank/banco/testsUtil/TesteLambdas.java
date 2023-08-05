@@ -56,9 +56,5 @@ public class TesteLambdas {
         lista.sort(comp);
 
         lista.forEach( (conta) -> System.out.println(conta + ", " + conta.getTitular().getNome()));
-
-//        for(Object o : lista){
-//            System.out.println(o);
-//        }
     }
 }
