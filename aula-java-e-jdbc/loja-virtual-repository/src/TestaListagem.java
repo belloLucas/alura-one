@@ -1,5 +1,4 @@
 import java.sql.*;
-import java.util.List;
 
 public class TestaListagem {
     public static void main(String[] args) throws SQLException {
