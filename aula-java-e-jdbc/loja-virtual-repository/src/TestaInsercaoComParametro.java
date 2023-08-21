@@ -2,17 +2,37 @@ import java.sql.*;
 
 public class TestaInsercaoComParametro {
     public static void main(String[] args) throws SQLException {
-        String nome = "Mouse'";
-        String descricao = "Mouse sem fio); delete from Produto;";
-
         ConnectionFactory connectionFactory = new ConnectionFactory();
         Connection con = connectionFactory.recuperarConexao();
 
-        PreparedStatement stm = con.prepareStatement(
-                "INSERT INTO PRODUTO(nome, descricao) VALUES (?, ?)", Statement.RETURN_GENERATED_KEYS);
+        con.setAutoCommit(false);
 
+        try{
+            PreparedStatement stm = con.prepareStatement(
+                    "INSERT INTO PRODUTO(nome, descricao) VALUES (?, ?)", Statement.RETURN_GENERATED_KEYS);
+
+            adicionarVariavel("SmartTV", "45 polegadas", stm);
+            adicionarVariavel("Radio", "Radio de bateria", stm);
+
+            con.commit();
+
+            stm.close();
+            con.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            System.out.println("Rollback foi executado: " + ex);
+            con.rollback();
+        }
+
+    }
+
+    private static void adicionarVariavel(String nome, String descricao, PreparedStatement stm) throws SQLException {
         stm.setString(1, nome);
         stm.setString(2, descricao);
+
+        if(nome.equals("Radio")) {
+            throw new RuntimeException("Não foi possível adicionar o produto");
+        }
 
         stm.execute();
         ResultSet set = stm.getGeneratedKeys();
@@ -22,6 +42,6 @@ public class TestaInsercaoComParametro {
             System.out.println(id);
         }
 
-        con.close();
+        set.close();
     }
 }
