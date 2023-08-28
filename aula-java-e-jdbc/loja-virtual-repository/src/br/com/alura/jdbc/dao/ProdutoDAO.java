@@ -34,7 +34,7 @@ public class ProdutoDAO {
 
         String sql = "SELECT ID, NOME, DESCRICAO FROM PRODUTO";
 
-        try(PreparedStatement pstm = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)){
+        try(PreparedStatement pstm = con.prepareStatement(sql)){
             pstm.execute();
 
             try(ResultSet rst = pstm.getResultSet()) {
