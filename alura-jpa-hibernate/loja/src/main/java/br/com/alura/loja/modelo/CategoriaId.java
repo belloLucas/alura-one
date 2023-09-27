@@ -5,6 +5,9 @@ import java.io.Serializable;
 
 @Embeddable
 public class CategoriaId implements Serializable {
+
+    private static final long serialVersionUID = 1l;
+
     private String nome;
     private String tipo;
 
